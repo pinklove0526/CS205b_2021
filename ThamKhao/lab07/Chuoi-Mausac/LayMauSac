@@ -1,0 +1,13 @@
+#!/bin/zsh
+# Display ANSI colours.
+#
+read bien
+esc="\033["
+# Thay doi gia tri cua fore tu 40 -> 47 no in mau nen!!!
+ for fore in 30 31 32 33 34 35 36 37; do
+   line1="$fore  "
+   line1="${line1}${esc}${back};${fore}m $bien  ${esc}0m" # VD: esc [ 37 ; 44 ; 0m : In dam
+   #line1="${line1}${esc}${back};${fore}m $bien  ${esc}5m" # Nhap nhay
+   echo -e "$line1"
+ done
+exit 0
